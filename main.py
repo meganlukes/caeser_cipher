@@ -41,3 +41,21 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
+text_array = []
+new_string = ""
+for letter in text:
+  number = alphabet.index(letter)
+  text_array.append(number)
+print(text_array)
+for digit in text_array:
+    if direction == "decode":
+      new_number = digit - shift
+      if new_number < 0:
+        new_number = new_number + 27
+    if direction == "encode":
+      new_number = digit + shift
+      if new_number > 26:
+        new_number = new_number - 27 
+    new_string = new_string + alphabet[new_number]
+print(new_string)
+print(" ")
