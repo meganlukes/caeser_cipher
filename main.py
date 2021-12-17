@@ -48,14 +48,14 @@ for letter in text:
   text_array.append(number)
 print(text_array)
 for digit in text_array:
-    if direction == "decode":
-      new_number = digit - shift
-      if new_number < 0:
-        new_number = new_number + 27
-    if direction == "encode":
-      new_number = digit + shift
-      if new_number > 26:
-        new_number = new_number - 27 
-    new_string = new_string + alphabet[new_number]
+  if direction == "encode":
+    new_number = digit + shift
+    if new_number > 26:
+      new_number = new_number - 27
+  if direction == "decode":
+    new_number = digit - shift
+    if new_number < 0:
+      new_number = new_number + 27
+  new_string = new_string + alphabet[new_number]
 print(new_string)
 print(" ")
